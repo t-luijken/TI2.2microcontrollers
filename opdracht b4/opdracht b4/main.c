@@ -26,10 +26,10 @@ int main(void)
     while(1)
     {
 	PORTD = 0x01;
-	wait( 2500);
      for(int i = 0; i < 7; i++ ){
+		 	wait( 2500);
 		PORTD =  PORTD << 1;
-		wait( 2500);
+		
 	 }
     }
 	return 1;
