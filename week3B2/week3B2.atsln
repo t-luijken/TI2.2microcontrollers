@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "week2B5", "week2B5\week2B5.cproj", "{2285C48D-296E-43FD-A7B6-69885F64CFFD}"
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "week3B2", "week3B2\week3B2.cproj", "{2285C48D-296E-43FD-A7B6-69885F64CFFD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8C95262-5F81-432B-8B7F-73204A5486B6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7780F01-78E4-421F-B46F-9A5D65354E01}"
 	ProjectSection(SolutionItems) = preProject
-		week2B5\LCD.c = week2B5\LCD.c
-		week2B5\LCD.h = week2B5\LCD.h
-		week2B5\main.h = week2B5\main.h
+		week3B2\LCD.h = week3B2\LCD.h
 	EndProjectSection
 EndProject
 Global
