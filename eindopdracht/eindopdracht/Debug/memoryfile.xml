@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="eindopdracht.elf">                 
+    <memory name="program">              
+      <units>bytes</units>                 
+      <length>131072</length>                 
+      <used>1650</used>                     
+      <free>129422</free>                     
+    </memory>                              
+    <memory name="data">                 
+      <units>bytes</units>                 
+      <length>4096</length>                 
+      <used>40</used>                     
+      <free>4056</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 
