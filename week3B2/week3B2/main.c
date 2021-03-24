@@ -30,13 +30,13 @@
 // Used library: util/delay.h
 
 
-volatile int TimerPreset = -1;  // 0xF6, 10 till overflow
+volatile int TimerPreset = -1;  
 volatile int tenthValue = 0;
 
 // Interrupt routine timer2 overflow
 ISR( TIMER2_OVF_vect ) {
-	TCNT2 = TimerPreset;	// Preset value
-	tenthValue++;		// Increment counter
+	TCNT2 = TimerPreset;	
+	tenthValue++;		   
 	
 		lcd_clear();
 		
@@ -50,10 +50,10 @@ ISR( TIMER2_OVF_vect ) {
 
 // Initialize timer2
 void timer2Init( void ) {
-	TCNT2 = TimerPreset;	// Preset value of counter 2
-	TIMSK |= BIT(6);		// T2 overflow interrupt enable
-	sei();				// turn_on intr all
-	TCCR2 = 0x07;		// Initialize T2: ext.counting, rising edge, run
+	TCNT2 = TimerPreset;	
+	TIMSK |= BIT(6);		
+	sei();				    
+	TCCR2 = 0x07;		    
 }
 
 int main(void) {
@@ -61,24 +61,21 @@ int main(void) {
 	init();
 	
 	DDRD &= ~BIT(7);		// PD7 op input: DDRD=xxxx xxx0
-	DDRA = 0xFF;			// set PORTA for output (shows countregister)
-	DDRB = 0xFF;			// set PORTB for output (shows tenthvalue)
+	
+	//port a en b output
+	DDRA = 0xFF;			
+	DDRB = 0xFF;			
 	
 	timer2Init();
 	
 
-lcd_clear();
-char string0[] = "0";
-display_text(&string0);
+   lcd_clear();
+   char string0[] = "0";
+   display_text(&string0);
 
 	while (1) {
 		PORTA = TCNT2;		// show value counter 2
-		PORTB = tenthValue;	// show value tenth counter
-		
-	
-		
-	
-		
+		PORTB = tenthValue;	// show value tenth counter	
 		
 		wait(10);
 	}

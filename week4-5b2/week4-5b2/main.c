@@ -18,26 +18,27 @@ void wait( int ms )
 // Initialize ADC:
 void adcInit( void )
 {
-	ADMUX = 0b11100001;            // AREF=2,56 V, result left adjusted, channel1 at pin PF1
-	ADCSRA = 0b10000110;        // ADC-enable, no interrupt, no free running, division by 64
+	ADMUX = 0b11100001;            
+	ADCSRA = 0b10000110;        
 }
 
 
-// Main program: Counting on T1
+
 int main( void )
 {
-	DDRF = 0x00;                    // set PORTF for input (ADC)
-	DDRA = 0xFF;                    // set PORTA for output
-	adcInit();                        // initialize ADC
+	DDRF = 0x00;                    
+	DDRA = 0xFF;                   
+	adcInit();                        
 
 	while (1)
 	{
-		ADCSRA |= BIT(6);                // Start ADC
-		while ( ADCSRA & BIT(6) ) ;        // Wait for completion
-		//PORTA = ADCH;                    // Show MSB (bit 9:2) of ADC
+		//start de adc
+		ADCSRA |= BIT(6);
 		
-		int val = ADCH/28;
+		//wachten totdat de adc klaar is 
+		while ( ADCSRA & BIT(6) ) ;       
+		PORTA = ADCH;                   
 		
-		wait(500);                        // every 50 ms (busy waiting)
+		wait(500);                        
 	}
 }
